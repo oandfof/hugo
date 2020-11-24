@@ -20,7 +20,7 @@ collections:
   - name: "pages"
     label: "Pages"
     files:
-     - file: "content/contact.md"
+     - file: "content/faq.md"
         label: "contact Page"
         name: "contact"
         fields:
