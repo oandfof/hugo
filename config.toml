@@ -1,4 +1,4 @@
-baseurl = "#"
+#baseurl = "#"
 title = "Universal"
 theme = "hugo-universal-theme"
 #themesDir = "../.."
