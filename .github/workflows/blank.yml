@@ -15,23 +15,6 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: checkout private repo
-      uses: actions/setup-node@v1
-      with:
-        repository:oandfof/hugo
-        path: public
-        
-        - name: setup hugo
-         uses: peaceiris/actions-hugo@v2
-         with:
-           hugo-version: latest
-           extended: true     
-        - name: cleanup files of public site
-         working-directory: ./public
-         shell: bash
-         run: find . -type f -name '*.min.*' -exec rm -f {} \;
-        - name: build content to public site
-         working-directory: ./
-         run: hugo --minify --gc
      run: |
         cd $PUBLISH_DIR
         git init
