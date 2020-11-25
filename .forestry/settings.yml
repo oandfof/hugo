@@ -8,7 +8,7 @@ sections:
   path: config.toml
   label: home
 - type: heading
-  label: qqq
+  label: 分隔
 - type: directory
   path: "*"
   label: qqq
