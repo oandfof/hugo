@@ -12,9 +12,6 @@ jobs:
       USER_EMAIL  : oandfof@gmail.com
       PUBLISH_DIR : ./dist
   runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [10.x]
     steps:
     - uses: actions/checkout@v1
     - name: Use Node.js ${{ matrix.node-version }}
