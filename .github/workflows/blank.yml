@@ -1,11 +1,11 @@
-name: deploy gh-pages
+name: deploy hugo
 on:
   push:
     branches:
       - master
 jobs:
   build:
-    name: Build and deploy gh-pages
+    name: Build and deploy hugo
     env:
       MY_SECRET   : ${{secrets.commit_secret}}
       USER_NAME   : oandfof
