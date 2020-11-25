@@ -15,6 +15,8 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Deploy to Server
+      run: echo Hello, world!
+    - name: Run a multi-line script   
     run: |
         cd $PUBLISH_DIR
         git init
