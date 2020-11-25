@@ -13,8 +13,6 @@ jobs:
       PUBLISH_DIR : ./dist
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v1
-    - name: checkout private repo
      run: |
         cd $PUBLISH_DIR
         git init
