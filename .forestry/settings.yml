@@ -10,12 +10,6 @@ sections:
 - type: heading
   label: 分隔
 - type: directory
-  path: "*"
-  label: qqq
-  create: documents
-  match: "*"
-  new_doc_ext: toml
-- type: directory
   path: content
   label: Pages
   create: all
