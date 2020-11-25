@@ -1,18 +1,35 @@
-name: deploy hugo
+name: deploy gh-pages
 on:
   push:
     branches:
       - master
 jobs:
   build:
-    name: Build and deploy hugo
+    name: Build and deploy gh-pages
     env:
       MY_SECRET   : ${{secrets.commit_secret}}
       USER_NAME   : oandfof
       USER_EMAIL  : oandfof@gmail.com
       PUBLISH_DIR : ./dist
-    - name: Commit files  
-    run: |
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [10.x]
+    steps:
+    - uses: actions/checkout@v1
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - name: npm install
+      run: |
+        npm install
+    - name: npm run build
+      run: |
+        npm run gulp m
+        npm run build
+    - name: Commit files
+      run: |
         cd $PUBLISH_DIR
         git init
         git config --local user.name $USER_NAME
