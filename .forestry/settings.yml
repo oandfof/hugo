@@ -7,7 +7,7 @@ sections:
 - type: directory
   path: "*"
   label: qqq
-  create: all
+  create: documents
   match: "*"
   new_doc_ext: toml
 - type: directory
