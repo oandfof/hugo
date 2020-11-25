@@ -19,7 +19,7 @@ sections:
   label: Blog
   create: all
   match: "**/*"
-upload_dir: resources/_gen
+upload_dir: resources/_gen/gallery
 public_path: "/uploads"
 front_matter_path: ''
 use_front_matter_path: false
