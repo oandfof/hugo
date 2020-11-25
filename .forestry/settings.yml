@@ -8,8 +8,8 @@ sections:
   path: "*"
   label: qqq
   create: all
-  match: "**/*"
-  new_doc_ext: ".toml"
+  match: "*"
+  new_doc_ext: toml
 - type: directory
   path: content
   label: Pages
