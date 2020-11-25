@@ -11,12 +11,18 @@ jobs:
       USER_NAME   : oandfof
       USER_EMAIL  : oandfof@gmail.com
       PUBLISH_DIR : ./dist
-    runs-on: ubuntu-latest
+  runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [10.x]
     steps:
     - uses: actions/checkout@v1
-    - name: Deploy to Server
-      run: echo Hello, world!
-    - name: Run a multi-line script   
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+
+    - name: Commit files  
     run: |
         cd $PUBLISH_DIR
         git init
