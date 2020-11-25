@@ -7,9 +7,9 @@ sections:
 - type: directory
   path: "*"
   label: '123'
-  create: documents
-  match: "**/*"
-  new_doc_ext: ".toml"
+  create: all
+  match: config.toml
+  new_doc_ext: ''
 - type: directory
   path: content
   label: Pages
