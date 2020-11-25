@@ -4,7 +4,7 @@ categories = ["programming"]
 date = 2015-09-17T11:47:08Z
 facebook_author = "GolangSociety"
 tags = ["go"]
-title = "Go is1111"
+title = "Go is1111aa"
 
 +++
 Hugo uses the excellent [go][] [html/template][gohtmltemplate] library for
