@@ -1,7 +1,7 @@
 ---
 new_page_extension: html
 auto_deploy: false
-admin_path: https://hardcore-keller-cebdcc.netlify.app/adminback
+admin_path: adminback
 webhook_url: 
 sections:
 - type: document
