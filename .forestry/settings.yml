@@ -5,11 +5,10 @@ admin_path:
 webhook_url: 
 sections:
 - type: directory
-  path: "*"
-  label: '123'
+  path: ''
+  label: qqq
   create: documents
   match: config.toml
-  new_doc_ext: ''
 - type: directory
   path: content
   label: Pages
