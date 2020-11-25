@@ -36,7 +36,7 @@ jobs:
         git config --local user.email $USER_EMAIL
         git status
         git remote add origin https://$MY_SECRET@github.com/$GITHUB_REPOSITORY.git
-                git add --all
+        git add --all
         git commit -m "deploy to Github pages"
         git push origin master -f
         echo 🤘 deploy hugo complete.
