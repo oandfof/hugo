@@ -12,24 +12,27 @@ jobs:
       USER_EMAIL  : oandfof@gmail.com
       PUBLISH_DIR : ./dist
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [10.x]
     steps:
     - uses: actions/checkout@v1
-    - name: Use Node.js ${{ matrix.node-version }}
+    - name: checkout private repo
       uses: actions/setup-node@v1
       with:
-        node-version: ${{ matrix.node-version }}
-    - name: npm install
-      run: |
-        npm install
-    - name: npm run build
-      run: |
-        npm run gulp m
-        npm run build
-    - name: Commit files
-      run: |
+        repository:oandfof/hugo
+        path: public
+        
+        - name: setup hugo
+         uses: peaceiris/actions-hugo@v2
+         with:
+           hugo-version: latest
+           extended: true     
+        - name: cleanup files of public site
+         working-directory: ./public
+         shell: bash
+         run: find . -type f -name '*.min.*' -exec rm -f {} \;
+        - name: build content to public site
+         working-directory: ./
+         run: hugo --minify --gc
+     run: |
         cd $PUBLISH_DIR
         git init
         git config --local user.name $USER_NAME
